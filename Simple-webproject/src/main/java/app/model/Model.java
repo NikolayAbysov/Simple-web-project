@@ -23,6 +23,18 @@ public class Model {
         model.add(user);
     }
 
+    public void delete (User user){
+        model.remove(user);
+    }
+
+    public void delete (String name){
+        for (int i = 0; i < model.size(); i++) {
+            if (name.equals((model.get(i)).getName())){
+                model.remove(i);
+            }
+        }
+    }
+
     public List<String> list() {
         return model.stream()
                 .map(User::getName)
